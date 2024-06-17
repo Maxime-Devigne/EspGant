@@ -20,6 +20,12 @@ void onConnectionEstablished(){
   client.publish("mytopic/test", "maxime = homme heureux"); // You can activate the retain flag by setting the third parameter to true
 }
 
+
+char tampon1[3] = {0,0,0};
+char tampon2[3] = {0,0,0};
+char tampon3[3] = {0,0,0};
+char tampon4[3] = {0,0,0};
+char tampon5[3] = {0,0,0};
 //definition des PINS
 const int sensorPin1 = 39;
 const int sensorPin2 = 35;
@@ -118,6 +124,31 @@ void loop() {
     sensorValue5 = 100;
   }
 
+  for (int i=0;i<=3;i++)
+  {
+    tampon1[i]=sensorValue1 ;
+    sensorValue1 = (tampon1[0] + tampon1[1] +tampon1[2] + sensorValue1)/4 ;
+  }
+    for (int i=0;i<=3;i++)
+  {
+    tampon2[i]=sensorValue2 ;
+    sensorValue2 = (tampon2[0] + tampon2[1] +tampon2[2] + sensorValue2)/4 ;
+  }
+    for (int i=0;i<=3;i++)
+  {
+    tampon3[i]=sensorValue3 ;
+    sensorValue3 = (tampon3[0] + tampon3[1] +tampon3[2] + sensorValue3)/4 ;
+  }
+    for (int i=0;i<=3;i++)
+  {
+    tampon4[i]=sensorValue4 ;
+    sensorValue4 = (tampon4[0] + tampon4[1] +tampon4[2] + sensorValue4)/4 ;
+  }
+    for (int i=0;i<=3;i++)
+  {
+    tampon5[i]=sensorValue5 ;
+    sensorValue5 = (tampon5[0] + tampon5[1] +tampon5[2] + sensorValue5)/4 ;
+  }
   //création du texte à afficher dans une chaine de caractères
   sprintf (texte1,"%d",sensorValue1) ;
   sprintf (texte2,"%d",sensorValue2) ;
